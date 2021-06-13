@@ -1,0 +1,2 @@
+RUN:
+python mastermind.py
