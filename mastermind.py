@@ -2,18 +2,11 @@ from typing import Optional
 
 import messages
 from game import Game, Original1P, Original2P, Mastermind44
-from utils import prompt, MasterMindException
+from utils import prompt, MasterMindException,score
 import random
 
 names=[]
 
-def score():
-    print("=======================================")
-    print("Name \t\t Score \t Games\t Average")
-    for name in names:
-        print(name +"\t\t "+str(random.randint(10,100))+"\t "+
-        str(random.randint(1,10))+"\t "+ str(random.randint(20,100)))
-    print("=======================================")        
 
 class Mastermind:
 
@@ -46,7 +39,7 @@ class Mastermind:
                 else:
                     print("Sorry Name is Already taken")
             elif selection_lower == 's':
-                score()
+                score(names)
             elif selection_lower == 'p':
                 game: Optional[Game] = None
                 print(messages.GAME_OPTIONS)
